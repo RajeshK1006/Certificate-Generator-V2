@@ -1,4 +1,4 @@
-Cultural Event Management System
+Cultural Event Management System.
 ================================
 
 Table of Contents
