@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>User Dashboard</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome to Your Dashboard</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Register Number</th>
+                <th>Email</th>
+                <th>Event Name</th>
+                <th>Cultural Name</th>
+                <th>Department</th>
+                <th>Certificates</th> <!-- New column for download button -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in participation_data %}
+            <tr>
+                <td>{{ entry.Name }}</td>
+                <td>{{ entry.register_number }}</td>
+                <td>{{ entry.email }}</td>
+                <td>{{ entry.event_name }}</td>
+                <td>{{ entry.cultural_name }}</td>
+                <td>{{ entry.department }}</td>
+                <td><a href="{{ url_for('download_certificate', name=entry.Name, cultural_name=entry.cultural_name, event_name=entry.event_name) }}" target="_blank">
+                    Download Certificate
+                </a></td>
+                <!-- <td><a href="/download_template/{{ entry.template_url }}" target="_blank">Download Template</a></td> Download button link  cultural_name=entry.cultural_name, event_name=entry.event_name, -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('logout') }}">LogOut</a>
+</body>
+</html>

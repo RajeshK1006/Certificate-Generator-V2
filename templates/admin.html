@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Admin Page</h2>
+        <form method="POST" action="{{ url_for('admin') }}" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="participant_name_list">Upload Participant List (Excel)</label><br>
+                <input type="file" id="participant_name_list" name="participant_name_list" accept=".xls,.xlsx">
+            </div>
+
+            <div class="form-group">
+                <label for="event_name">Enter the Event Name</label><br>
+                <input type="text" id="event_name" name="event_name" placeholder="e.g., Web Crafting">
+            </div>
+
+            <div class="form-group">
+                <label for="cultural_name">Enter the Cultural Name</label><br>
+                <input type="text" id="cultural_name" name="cultural_name" placeholder="e.g., TechZoom">
+            </div>
+
+            <div class="form-group">
+                <label for="certificate_template">Upload the Certificate Template (PNG format)</label><br>
+                <input type="file" id="certificate_template" name="certificate_template" accept=".png">
+            </div>
+
+            <button type="submit">Upload</button>
+        </form>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>

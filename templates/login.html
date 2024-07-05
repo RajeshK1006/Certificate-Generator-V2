@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate-Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+    <form method = "POST" action = "{{ url_for('login') }}">
+        <label for="input">email</label>
+        <input type="text" name="Email" placeholder="email">
+        <label for="input">password</label>
+        <input type="text" name="Password"  placeholder="password">
+        <button type="submit">login</button>
+    </form>
+    <!-- <a href="forgotpass">forgot password ?</a> -->
+    <a href="{{ url_for('register') }}">Don't have an account?</a>
+</body>
+</html>

@@ -1,0 +1,5 @@
+.env
+.vscode
+serviceKey.json
+/env/
+/fonts/
