@@ -62,15 +62,15 @@ Installation
 
 ### Steps
 
-1.  shCopy codegit clone https://github.com/yourusername/cultural-event-management.gitcd cultural-event-management
+1.  sh- code : git clone Repo URL
     
-2.  shCopy codepython3 -m venv venvsource venv/bin/activate # On Windows: venv\\Scripts\\activate
+2.  sh- code: python3 -m venv venvsource venv/bin/activate # On Windows: venv\\Scripts\\activate
     
-3.  shCopy codepip install -r requirements.txt
+3.  sh- code: pip install -r requirements.txt
     
 4.  **Add your Firebase service account key:**Place your serviceKey.json file in the project root directory.
     
-5.  shCopy codeflask run
+5.  sh- code: flask run
     
 
 Usage
